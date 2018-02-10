@@ -9,6 +9,8 @@
             <img id = "wood" src = "hardwood.jpg">
             <img id = "tile" src = "tile.jpg">
         </a-assets>
+
+        <!-- Staircase -->
         <a-entity position="0 0 -7.383"><a-box position="12.051 0.703 4.555" src="hardwood.jpg" material="" geometry="height:1.2;depth:1.23;width:5.85"></a-box>
             <a-box position="12.051 1.306 5.799" src="hardwood.jpg" geometry="height:2.4;depth:1.23;width:5.85" material=""></a-box>
             <a-box position="12.051 1.863 7.036" src="hardwood.jpg" geometry="height:3.6;depth:1.23;width:5.85" material=""></a-box>
@@ -19,21 +21,36 @@
             <a-box position="12.051 4.871 13.114" src="hardwood.jpg" geometry="height:9.6;depth:1.23;width:5.85" material=""></a-box>
             <a-box position="12.051 4.871 14.319" src="hardwood.jpg" geometry="height:9.6;depth:1.23;width:5.85" material=""></a-box>
             <a-box position="12.051 4.871 18.568" src="hardwood.jpg" geometry="depth:7.39;width:5.85;height:9.6"></a-box></a-entity>
-        <a-box src="hardwood.jpg" depth="30" height=".2" width="30" material="" geometry=""></a-box><a-box src="hardwood.jpg" depth="30" height=".2" width="30" position="-2.936 9.924 0" geometry="width:23.97" material=""></a-box>
+
+        <!-- House Frame -->
+        <!-- Floors -->
+        <a-box src="hardwood.jpg" depth="30" height=".2" width="30" material="" geometry=""></a-box>
+        <a-box src="hardwood.jpg" depth="30" height=".2" width="30" position="-2.936 9.924 0" geometry="width:23.97" material=""></a-box>
+        <!-- Walls -->
         <a-box src="tile.jpg" depth="30" height="10" width="5" position="14.91 9.94 0" geometry="height:20;width:0.22" material="" visible="false"></a-box><a-box src="tile.jpg" depth="30" height="10" width="5" position="9.048 4.986 3.946" geometry="depth:22;height:10.12;width:0.22" material=""></a-box><a-box src="tile.jpg" depth="30" height="10" width="5" position="9.048 14.94 -3.669" geometry="depth:22.29;height:9.87;width:0.22"></a-box>
         <a-box src="tile.jpg" depth="30" height="10" width="5" position="-14.977 9.884 0" geometry="height:20;width:0.22" material=""></a-box>
         <a-box src="tile.jpg" depth="30" height="10" width="5" position="-0.009 9.88 15.021" geometry="height:20;width:0.22" rotation="0 90 0" material=""></a-box>
         <a-box src="tile.jpg" depth="30" height="10" width="5" position="-0.009 9.923 -14.914" geometry="height:20;width:0.22" rotation="0 90 0" material=""></a-box>
+
+        <!-- Skybox -->
         <a-sky src="sky.jpg" material="" geometry=""></a-sky>
+
+        <!-- Carpet -->
         <a-box src="carpet.jpg" position="-3.551 0.083 2.145" geometry="depth:20;width:15;height:0.14"></a-box>
+
+        <!-- Fireplace -->
         <a-entity><a-box src="fireplace.jpg" position="-4.081 3.728 -14.384" material="" geometry="depth:0.85;height:7.25;width:7.05"></a-box>
             <a-box src="marble.png" position="-4.081 0.213 -12.163" rotation="90 0 0" geometry="height:3.73;width:7.05;depth:0.14"></a-box>
             <a-box src="fireplace.jpg" position="-8.004 3.728 -13.766" geometry="width:0.7999999999999998;depth:2.11;height:7.25"></a-box>
             <a-box src="fireplace.jpg" position="-0.209 3.728 -13.766" geometry="width:0.8;depth:2.11;height:7.25"></a-box>
             <a-box src="fireplace.jpg" position="-4.085 6.966 -13.365" rotation="0 0 90" geometry="height:7.05;depth:1.34;width:0.8"></a-box></a-entity>
+
+        <!-- Firewood -->
         <a-entity><a-obj-model src="firewood.obj" mtl="firewood.mtl" position="-4.265 0.376 -12.681" rotation="270 0 0" scale="0.003 0.003 0.003" material="" obj-model=""></a-obj-model>
             <a-obj-model src="firewood.obj" mtl="firewood.mtl" position="-6.281 0.376 -12.681" rotation="270 0 0" scale="0.003 0.003 0.003" material=""></a-obj-model>
             <a-obj-model src="firewood.obj" mtl="firewood.mtl" position="-2.108 0.376 -12.681" rotation="270 0 0" scale="0.003 0.003 0.003" material=""></a-obj-model></a-entity>
+
+        <!-- Television -->
         <a-entity><a-box color="#000000" position="8.831 5.776 3.779" material="" geometry="depth:8.46;width:0.15;height:4.6"></a-box>
             <a-box color="#000000" position="8.81 8.13 3.78" material="color:#696969" geometry="height:0.14;width:0.15;depth:8.49"></a-box>
             <a-box color="#000000" position="8.81 5.838 7.953" rotation="90 0 0" material="color:#696969" geometry="depth:4.6;height:0.14;width:0.15"></a-box>
