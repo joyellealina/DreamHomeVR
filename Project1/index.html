@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+    <script type = "javascript">
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                var COLORS = ['red', 'green'];
+                this.el.addEventListener('click', function (evt) {
+                    var randomIndex = Math.floor(Math.random() * COLORS.length);
+                    this.setAttribute('material', 'color', COLORS[randomIndex]);
+                    console.log('I was clicked at: ', evt.detail.intersection.point);
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id = "wood" src = "assets/hardwood.jpg">
+            <img id = "tile" src = "assets/tile.jpg">
+
+            <a-mixin id="floorMat" material="color:#BBB"></a-mixin>
+
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+        </a-assets>
+
+        <a-entity position="0 2 0"><a-camera>
+            <a-entity cursor="fuse: true; fuseTimeout: 500"
+                      position="0 0 -1"
+                      geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                      material="color: white; shader: flat">
+                <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
+            </a-entity>
+        </a-camera></a-entity>
+
+        <a-entity id="box" class="clickable" cursor-listener geometry="primitive: box" material="color: blue" position="2 2 2"></a-entity>
+
+        <!-- Staircase -->
+        <a-entity position="0 0 -7.383"><a-box position="12.051 0.703 4.555" src="assets/hardwood.jpg" material="" geometry="height:1.2;depth:1.23;width:5.85"></a-box>
+            <a-box position="12.051 1.306 5.799" src="assets/hardwood.jpg" geometry="height:2.4;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 1.863 7.036" src="assets/hardwood.jpg" geometry="height:3.6;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 2.383 8.267" src="assets/hardwood.jpg" geometry="height:4.8;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 3.068 9.488" src="assets/hardwood.jpg" geometry="height:6;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 3.611 10.664" src="assets/hardwood.jpg" geometry="height:7.2;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 4.25 11.883" src="assets/hardwood.jpg" geometry="height:8.4;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 4.871 13.114" src="assets/hardwood.jpg" geometry="height:9.6;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 4.871 14.319" src="assets/hardwood.jpg" geometry="height:9.6;depth:1.23;width:5.85" material=""></a-box>
+            <a-box position="12.051 4.871 18.568" src="assets/hardwood.jpg" geometry="depth:7.39;width:5.85;height:9.6"></a-box>
+        </a-entity>
+
+        <!-- House Frame -->
+        <!-- Floors -->
+        <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" material="" geometry=""></a-box>
+        <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-2.936 9.924 0" geometry="width:23.97" material=""></a-box>
+
+        <!-- Walls -->
+        <a-entity>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="14.91 9.94 0" geometry="height:20;width:0.22" material="" visible="false"></a-box>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="9.048 4.986 3.946" geometry="depth:22;height:10.12;width:0.22" material=""></a-box>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="9.048 14.94 -3.669" geometry="depth:22.29;height:9.87;width:0.22"></a-box>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-14.977 9.884 0" geometry="height:20;width:0.22" material=""></a-box>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-0.009 9.88 15.021" geometry="height:20;width:0.22" rotation="0 90 0" material=""></a-box>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-0.009 9.923 -14.914" geometry="height:20;width:0.22" rotation="0 90 0" material=""></a-box>
+        </a-entity>
+        <!-- Wall Ornaments -->
+        <a-entity>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-5.058 14.848 -14.595" geometry="height:10;width:1.23;depth:0.41"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-0.472 14.848 -14.595" geometry="width:1.23;height:10;depth:0.41"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="3.997 14.848 -14.595" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="8.351 14.848 -14.595" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-9.785 14.848 -14.595" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.244 14.848 -14.595" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.244 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-9.824 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-5.298 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-0.801 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="3.591 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="8.289 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="14.366 14.848 14.738" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 -14.116" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 -10.144" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 -5.872" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 -1.581" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 2.51" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 6.597" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 10.685" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-14.679 14.848 14.308" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="14.659 14.848 14.308" geometry="depth:0.41;height:10;width:1.23"></a-box>
+            <a-box rotation="0 90 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="8.667 14.848 -14.116" geometry="depth:0.41;height:10;width:1.23"></a-box>
+
+            <a-box rotation="90 90 90" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="8.154 16.633 -9.217" geometry="depth:0.41;height:5.56;width:1.23"></a-box>
+            <a-box rotation="90 90 90" src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="8.154 14.848 -2.297" geometry="height:5.56;width:1.23;depth:0.41"></a-box>
+        </a-entity>
+
+        <!-- Skybox -->
+        <a-sky src="assets/sky.jpg" material="" geometry=""></a-sky>
+
+        <!-- Carpet -->
+        <a-box src="assets/carpet.jpg" position="-3.551 0.083 2.145" geometry="depth:20;width:15;height:0.14"></a-box>
+
+        <!-- Fireplace -->
+        <a-entity><a-box src="assets/fireplace.jpg" position="-4.081 3.728 -14.384" material="" geometry="depth:0.85;height:7.25;width:7.05"></a-box>
+            <a-box src="assets/marble.png" position="-4.081 0.213 -12.163" rotation="90 0 0" geometry="height:3.73;width:7.05;depth:0.14"></a-box>
+            <a-box src="assets/fireplace.jpg" position="-8.004 3.728 -13.766" geometry="width:0.7999999999999998;depth:2.11;height:7.25"></a-box>
+            <a-box src="assets/fireplace.jpg" position="-0.209 3.728 -13.766" geometry="width:0.8;depth:2.11;height:7.25"></a-box>
+            <a-box src="assets/fireplace.jpg" position="-4.085 6.966 -13.365" rotation="0 0 90" geometry="height:7.05;depth:1.34;width:0.8"></a-box>
+        </a-entity>
+
+        <!-- Firewood -->
+        <a-entity><a-obj-model src="assets/firewood.obj" mtl="assets/firewood.mtl" position="-4.265 0.376 -12.681" rotation="270 0 0" scale="0.003 0.003 0.003" material="" obj-model=""></a-obj-model>
+            <a-obj-model src="assets/firewood.obj" mtl="assets/firewood.mtl" position="-6.281 0.376 -12.681" rotation="270 0 0" scale="0.003 0.003 0.003" material=""></a-obj-model>
+            <a-obj-model src="assets/firewood.obj" mtl="assets/firewood.mtl" position="-2.108 0.376 -12.681" rotation="270 0 0" scale="0.003 0.003 0.003" material=""></a-obj-model>
+        </a-entity>
+
+        <!-- Television -->
+        <a-entity><a-box color="#000000" position="8.831 5.776 3.779" material="" geometry="depth:8.46;width:0.15;height:4.6"></a-box>
+            <a-box color="#000000" position="8.81 8.13 3.78" material="color:#696969" geometry="height:0.14;width:0.15;depth:8.49"></a-box>
+            <a-box color="#000000" position="8.81 5.838 7.953" rotation="90 0 0" material="color:#696969" geometry="depth:4.6;height:0.14;width:0.15"></a-box>
+            <a-box color="#000000" position="8.81 5.796 -0.391" rotation="90 0 0" material="color:#696969" geometry="depth:4.6;height:0.14;width:0.15"></a-box>
+            <a-box color="#000000" position="8.81 3.551 3.781" material="color:#696969" geometry="height:0.14;width:0.15;depth:8.49"></a-box>
+        </a-entity>
+
+        <!-- Couch -->
+        <a-obj-model src="assets/Realistic sofa only.obj" position="-8.024 0 0.412" rotation="0 180 0" material="color:#000000" scale="0.007 0.007 0.007"></a-obj-model>
+
+        <!-- Bar -->
+        <a-entity>
+            <a-box material="" src="assets/marble.png" depth="30" height=".2" width="30" position="3.548 11.567 -6.077" geometry="width:0.58;height:3.12;depth:16.35"></a-box>
+            <a-box rotation="0 0 90" src="assets/marble.png" depth="30" height=".2" width="30" position="3.294 13.247 -6.077" geometry="width:0.20999999999999996;height:3.12;depth:16.35"></a-box>
+        </a-entity>
+
+        <!-- Bar Counter Items -->
+        <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -9.07 0" position="2.792 13.358 -12.378" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+        <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 0 0" position="3.621 13.358 -0.744" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+        <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 25 0" position="2.792 13.358 0" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+
+        <!-- Bar Shelf Items -->
+        <a-entity>
+            <a-obj-model material="" scale="0.06 0.06 0.06" position="8.142 15.397 -1.195" src="assets/glasswear.obj" mtl="assets/glasswear.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.06 0.06 0.06" position="8.142 15.398 -0.575" src="assets/glasswear.obj" mtl="assets/glasswear.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.06 0.06 0.06" position="8.142 15.407 0" src="assets/glasswear.obj" mtl="assets/glasswear.mtl"></a-obj-model>
+            <a-obj-model material="" scale="1.2 1.2 1.2" position="8.052 15.115 -4.032" src="assets/glass-a04.obj" mtl="assets/glass-a04.mtl"></a-obj-model>
+            <a-obj-model material="" scale="1.2 1.2 1.2" position="8.052 15.115 -3.401" src="assets/glass-a04.obj" mtl="assets/glass-a04.mtl"></a-obj-model>
+            <a-obj-model material="" scale="1.2 1.2 1.2" position="8.052 15.115 -2.78" src="assets/glass-a04.obj" mtl="assets/glass-a04.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.3 0.3 0.3" position="8.091 15.027 -4.076" src="assets/wine.obj" mtl="assets/wine.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.3 0.3 0.3" position="8.091 15.027 -4.076" src="assets/wine.obj" mtl="assets/wine.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -75 0" position="7.954 16.876 -11.157" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -75 0" position="7.957 16.854 -10.713" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -75 0" position="8.433 16.819 -10.536" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -75 0" position="8.433 16.853 -10.027" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -75 0" position="7.948 16.845 -10.25" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.005 0.005 0.005" rotation="270 -75 0" position="8.433 16.842 -11.014" src="assets/Jever_Beer.obj" mtl="assets/Jever_Beer.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.2 0.2 0.2" position="8.091 16.815 -8.088" src="assets/wine.obj" mtl="assets/wine.mtl"></a-obj-model>
+            <a-obj-model material="" scale="0.25 0.25 0.25" position="7.845 16.807 -7.361" src="assets/wine.obj" mtl="assets/wine.mtl"></a-obj-model>
+        </a-entity>
+
+        <!-- Pool Table -->
+        <a-entity position="0 12.241 0">
+            <a-box geometry="width:5.65;height:1.02;depth:0.8" material="" position="-8.259 0.718 2.224" src="assets/finewood.jpg"></a-box>
+            <a-box geometry="width:9.67;height:1.02;depth:0.8" rotation="0 90 0" position="-11.005 0.718 6.652" src="assets/finewood.jpg"></a-box>
+            <a-box geometry="width:9.67;height:1.02;depth:0.8" rotation="0 90 0" position="-5.801 0.718 6.652" src="assets/finewood.jpg"></a-box>
+            <a-box geometry="height:2.69;depth:2.9400000000000004;width:5.39" rotation="0 90 0" position="-8.35 -0.954 6.652" src="assets/finewood.jpg"></a-box>
+            <a-box geometry="depth:0.8;height:1.02;width:5.65" position="-8.259 0.718 11.093" src="assets/finewood.jpg"></a-box>
+            <a-box geometry="height:0.5;width:4.6;depth:8" position="-8.295 0.694 6.677" color="green"></a-box>
+            <a-sphere geometry="radius:0.2" position="-7.902 1.115 3.73" color="white" radius="3"></a-sphere>
+            <a-sphere geometry="radius:0.2" position="-9.012 1.115 6.66" color="yellow" radius="3"></a-sphere>
+            <a-sphere geometry="radius:0.2" position="-8.058 1.115 7.984" color="red" radius="3"></a-sphere>
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>
