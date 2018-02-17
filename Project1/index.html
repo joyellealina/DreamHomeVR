@@ -4,10 +4,6 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
-    <script>
-        var secondCamera = document.querySelector('#second-camera');
-        secondCamera.setAttribute('camera', 'active', true);
-    </script>
 </head>
 <body>
     <a-scene>
@@ -21,12 +17,31 @@
             <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
         </a-assets>
 
-        <a-entity position="0 2.2 0">
-            <a-camera universal-controls>
+        <a-entity position="0 2.4 0">
+            <a-camera id="cam" universal-controls>
+
                 <a-entity raycaster="far: 300; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
                               radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
             </a-camera>
         </a-entity>
+
+        <!-- Buttons for moving up/down stairs -->
+        <a-box id="up" geometry="width:0.28;height:0.6;depth:0.6" position="9.3 4.05 -5.871" src="assets/hardwood.jpg" class="intersectable"></a-box>
+        <a-box id="down" geometry="depth:0.6;height:0.6;width:0.27999999999999997" position="9.3 13.967 6.185" src="assets/hardwood.jpg" class="intersectable"></a-box>
+        <script>
+            var cam = document.querySelector('#cam');
+            var ch1 = document.querySelector('#up');
+            var ch2 = document.querySelector('#down');
+
+            ch1.addEventListener('click', function () {
+                cam.setAttribute('position' , {x: 11.557, y: 12.7, z: 10.59});
+                cam.setAttribute('rotation' , {x: 0, y: 90, z: 0});
+            });
+            ch2.addEventListener('click', function () {
+                cam.setAttribute('position' , {x: 11.557, y: 2.4, z: -5.536});
+                cam.setAttribute('rotation' , {x: 0, y: 0, z: 0});
+            });
+        </script>
 
         <!-- Staircase -->
         <a-entity position="0 0 -7.383"><a-box position="12.051 0.703 4.555" src="assets/hardwood.jpg" geometry="depth:1.23;height:1.2;width:5.85"></a-box>
@@ -41,6 +56,7 @@
             <a-box position="12.051 4.871 18.568" src="assets/hardwood.jpg" geometry="depth:7.39;height:9.6;width:5.85"></a-box>
         </a-entity>
 
+
         <!-- House Frame -->
         <!-- Floors -->
         <a-box position="-5.996 0 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" geometry="width:42"></a-box>
@@ -52,7 +68,7 @@
             <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="9.048 4.986 3.946" geometry="depth:22;height:10.12;width:0.22"></a-box>
             <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="9.048 14.94 -3.669" geometry="depth:22.29;height:9.87;width:0.22"></a-box>
             <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-14.977 14.879 0" geometry="width:0.22"></a-box><a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-14.977 1.557 -3.782" geometry="depth:22;height:3;width:0.22"></a-box>
-            <a-box visible="false" src="assets/tile.jpg" depth="30" height="10" width="5" position="-6.039 9.88 15.021" geometry="depth:42;height:20;width:0.22" rotation="0 90 0"></a-box>
+            <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-6.039 9.88 15.021" geometry="depth:42;height:20;width:0.22" rotation="0 90 0"></a-box>
             <a-box src="assets/tile.jpg" depth="30" height="10" width="5" position="-5.995 9.923 -14.914" geometry="depth:42;height:20;width:0.22" rotation="0 90 0"></a-box>
         </a-entity>
         <!-- Wall Ornaments -->
@@ -92,10 +108,10 @@
         <a-box src="assets/carpet.jpg" position="-3.551 0.083 2.145" geometry="depth:20;height:0.14;width:15"></a-box>
 
         <!-- Fireplace -->
-        <a-entity><a-box src="assets/fireplace.jpg" position="-4.081 2.983 -14.384" material="" geometry="height:5.390000000000001;depth:0.85;width:7.05"></a-box><a-box src="assets/fireplace.jpg" position="-4.081 7.728 -13.177" geometry="height:4.15;width:4.359999999999999;depth:0.85"></a-box>
-            <a-box material="" src="assets/marble.png" position="-6.41 0.213 -12.163" rotation="90 0 0" geometry="width:2.33;height:3.73;depth:0.14"></a-box><a-box src="assets/marble.png" position="-4.106 0.213 -12.163" rotation="90 0 0" geometry="width:2.33;height:3.73;depth:0.14"></a-box><a-box src="assets/marble.png" position="-1.809 0.213 -12.163" rotation="90 0 0" geometry="depth:0.14;height:3.73;width:2.33"></a-box>
+        <a-entity><a-box src="assets/fireplace.jpg" position="-4.081 2.983 -14.384" geometry="depth:0.85;height:5.390000000000001;width:7.05"></a-box><a-box src="assets/fireplace.jpg" position="-4.081 7.728 -13.177" geometry="height:4.15;width:4.36;depth:0.85"></a-box>
+            <a-box src="assets/marble.png" position="-6.41 0.213 -12.163" rotation="90 0 0" geometry="depth:0.14;height:3.73;width:2.33"></a-box><a-box src="assets/marble.png" position="-4.106 0.213 -12.163" rotation="90 0 0" geometry="depth:0.14;height:3.73;width:2.33"></a-box><a-box src="assets/marble.png" position="-1.809 0.213 -12.163" rotation="90 0 0" geometry="depth:0.14;height:3.73;width:2.33"></a-box>
 
-            <a-box material="" src="assets/fireplace.jpg" position="-0.167 2.919 -13.766" geometry="height:5.5;width:0.8;depth:2.11"></a-box><a-box src="assets/fireplace.jpg" position="-8.015 2.919 -13.766" geometry="depth:2.11;height:5.5;width:0.8"></a-box>
+            <a-box src="assets/fireplace.jpg" position="-0.221 2.919 -13.766" geometry="depth:2.11;height:5.5;width:0.8"></a-box><a-box src="assets/fireplace.jpg" position="-8.015 2.919 -13.766" geometry="depth:2.11;height:5.5;width:0.8"></a-box>
             <a-box src="assets/fireplace.jpg" position="-4.085 5.27 -13.365" rotation="0 0 90" geometry="depth:1.34;height:7.05;width:0.8"></a-box>
         </a-entity>
 
@@ -116,8 +132,8 @@
         </a-entity>
 
         <!-- Door -->
-        <a-obj-model material="" scale="0.03 0.03 0.03" position="-1.44 0.135 16.115" src="assets/puerta.obj" mtl="assets/puerta.mtl" class="intersectable">
-            <a-animation begin="click" attribute="rotation" to= "0 -90 0" dur="3000"></a-animation>
+        <a-obj-model material="" scale="0.03 0.03 0.03" position="-1.44 0.051 15.89" src="assets/puerta.obj" mtl="assets/puerta.mtl" class="intersectable">
+            <a-animation begin="click" attribute="rotation" to="0 -90 0" dur="3000"></a-animation>
         </a-obj-model>
 
         <!-- Couch -->
@@ -162,14 +178,14 @@
             <a-box geometry="depth:2.9400000000000004;height:2.69;width:5.39" rotation="0 90 0" position="-8.35 -0.954 6.652" src="assets/finewood.jpg"></a-box>
             <a-box geometry="depth:0.8;height:1.02;width:5.65" position="-8.259 0.718 11.093" src="assets/finewood.jpg"></a-box>
             <a-box geometry="depth:8;height:0.5;width:4.6" position="-8.295 0.694 6.677" color="green"></a-box>
-            <a-sphere geometry="radius:0.2" position="-7.902 1.115 3.73" color="white" radius="3">
-                <a-animation begin="click" attribute="position" from="-7.902 1.115 3.73" to="-8.902 1.115 3.73" dur="1000"></a-animation>
+            <a-sphere geometry="radius:0.2" position="-7.902 1.115 3.73" color="white" radius="3" class="intersectable">
+                <a-animation begin="click" attribute="position" from="-7.902 1.115 3.73" to="-6.903 1.115 6.313" dur="1000"></a-animation>
             </a-sphere>
-            <a-sphere geometry="radius:0.2" position="-9.012 1.115 6.66" color="yellow" radius="3">
-                <a-animation begin="click" attribute="position" from="-9.012 1.115 6.66" to="-10.012 1.115 6.66" dur="1000"></a-animation>
+            <a-sphere geometry="radius:0.2" position="-9.012 1.115 6.66" color="yellow" radius="3" class="intersectable">
+                <a-animation begin="click" attribute="position" from="-9.012 1.115 6.66" to="-10.012 1.115 5.754" dur="1000"></a-animation>
             </a-sphere>
-            <a-sphere geometry="radius:0.2" position="-8.058 1.115 7.984" color="red" radius="3">
-                <a-animation begin="click" attribute="position" from="-8.058 1.115 7.984" to="-9.058 1.115 7.984" dur="1000"></a-animation>
+            <a-sphere geometry="radius:0.2" position="-8.058 1.115 7.984" color="red" radius="3" class="intersectable">
+                <a-animation begin="click" attribute="position" from="-8.058 1.115 7.984" to="-9.058 1.115 9.462" dur="1000"></a-animation>
             </a-sphere>
         </a-entity>
 
