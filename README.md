@@ -10,4 +10,5 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
 Describe the application and highlight findings here. Include screenshots.
 ## Resources
 [Code](https://github.com/joyellealina/DreamHomeVR/blob/master/Project1/index.html)
-Put source code or any assets here.
+
+[Assets](https://github.com/joyellealina/DreamHomeVR/tree/master/Project1/assets)
