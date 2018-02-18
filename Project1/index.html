@@ -120,6 +120,21 @@
 
         <!--Environment-->
         <a-entity environment="ground: flat"></a-entity>
+        <a-light id="house-lighting" intensity="1.00" type="ambient"></a-light>
+        <a-obj-model id="on-switch" src="assets/lightSwitch.obj" position="-3.515 3.962 14.862" scale="0.1 0.1 0.1" material=""></a-obj-model>
+        <a-obj-model id="off-switch" src="assets/lightSwitch.obj" position="-4.141 3.962 14.862" scale="0.1 0.1 0.1" material=""></a-obj-model>
+        <script>
+                var lighting = document.querySelector('#house-lighting');
+                var on_switch = document.querySelector('#on-switch');
+                var off_switch = document.querySelector('#off-switch');
+    
+                on_switch.addEventListener('click', function () {
+                    lighting.setAttribute('intensity' , 1.00);
+                });
+                off_switch.addEventListener('click', function () {
+                    lighting.setAttribute('intensity' , 0.0);
+                });
+            </script>
 
         <!-- Carpet -->
         <a-box src="assets/carpet.jpg" id="carpet" position="-3.551 0.083 2.145" geometry="depth:20;height:0.14;width:15"></a-box>
@@ -179,19 +194,8 @@
          <!--Lamps-->
          <a-obj-model src="assets/deskLamp1.obj" mtl="assets/deskLamp1.mtl" id="lamp-1" position="-9.993 2.854 8.186" scale="0.05 0.05 0.05" material="" obj-model=""></a-obj-model>
          <a-obj-model src="assets/deskLamp1.obj" mtl="assets/deskLamp1.mtl" id="lamp-2" position="-9.993 2.854 -2.602" scale="0.05 0.05 0.05" material=""></a-obj-model>
-         <a-entity light="intensity:0.3;color:#EEE;type:ambient" position="-8.638 5.247 9.293" id="lamp-1-light"></a-entity>
-         <a-entity light="intensity:0.3;type:ambient;color:#EEE" position="-8.638 5.247 -1.346" id="lamp-2-light"></a-entity>
-         <script>
-            var ch1 = document.querySelector('#lamp-1');
-            var ch2 = document.querySelector('#lamp-1');
 
-            ch1.addEventListener('click', function () {
-                lamp1.setAttribute('intensity' , 0.3);
-            });
-            ch2.addEventListener('click', function () {
-                lamp1.setAttribute('intensity' , 0);
-            });
-        </script>
+
          <!--Entertainment Center-->
          <a-obj-model src="assets/meubleHiFiBas.obj" mtl="assets/meubleHiFiBas.mtl" id="entertainment-center" position="7.655 3.288 3.858" scale="0.1 0.1 0.1" rotation="0 90 0" material=""></a-obj-model>
 
@@ -305,6 +309,8 @@
         <a-obj-model material="" scale="0.04 0.036 0.04" rotation="0 90 0" position="-25.101 0 -0.58" src="assets/kitchenSink.obj" mtl="assets/kitchenSink.mtl"></a-obj-model>
 
         <!--Bedroom-->
+        <a-obj-model id="bed" src="assets/letto.obj" mtl="assets/letto.mtl" position="43.406 0.108 -5.836" rotation="0 -90 0" scale="0.05 0.05 0.05" material=""></a-obj-model>
+        <a-obj-model id="bedroom-painting" src="assets/frame_horizontal.obj" mtl="assets/frame_horizontal.mtl" position="38.75 5.051 -0.221" rotation="0 -90 0" scale="0.05 0.05 0.05" material=""></a-obj-model>
 
     </a-scene>
 </body>
