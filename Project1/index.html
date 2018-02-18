@@ -3,6 +3,7 @@
 <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 </head>
 <body>
     <a-scene>
@@ -63,6 +64,9 @@
         <a-triangle src="assets/roof-tile.jpg" position="25.237 33.947 -0.043" rotation="-50.5 90 0" scale="31.5 48 25" material="side:double"></a-triangle>
         <a-triangle src="assets/roof-tile.jpg" position="-11.759 33.947 0.011" rotation="50.5 90 0" scale="31.5 48 25" material="side:double"></a-triangle>
 
+        <!--Exterior Walls-->
+
+
         <!-- Floors -->
         <a-box position="-5.996 0 0" src="assets/hardwood.jpg" depth="30" height=".2" width="30" geometry="width:42"></a-box>
         <a-box src="assets/hardwood.jpg" depth="30" height=".2" width="30" position="-2.936 9.924 0" geometry="width:23.97"></a-box>
@@ -114,8 +118,8 @@
             
         </a-entity>
 
-        <!-- Skybox -->
-        <a-sky src="assets/sky.jpg"></a-sky>
+        <!--Environment-->
+        <a-entity environment="ground: flat"></a-entity>
 
         <!-- Carpet -->
         <a-box src="assets/carpet.jpg" id="carpet" position="-3.551 0.083 2.145" geometry="depth:20;height:0.14;width:15"></a-box>
