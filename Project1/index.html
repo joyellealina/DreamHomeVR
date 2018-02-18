@@ -175,7 +175,23 @@
          <!--Side Tables-->
          <a-obj-model src="assets/petiteTableSalon.obj" id="side-table-1" position="-8.718 0.124 9.057" rotation="0 180 0" scale="0.05 0.05 0.05" material="color:#804000" obj-model=""></a-obj-model>
          <a-obj-model src="assets/petiteTableSalon.obj" id="side-table-2" position="-8.718 0.124 -1.564" rotation="0 180 0" scale="0.05 0.05 0.05" material="color:#804000"></a-obj-model>
- 
+        
+         <!--Lamps-->
+         <a-obj-model src="assets/deskLamp1.obj" mtl="assets/deskLamp1.mtl" id="lamp-1" position="-9.993 2.854 8.186" scale="0.05 0.05 0.05" material="" obj-model=""></a-obj-model>
+         <a-obj-model src="assets/deskLamp1.obj" mtl="assets/deskLamp1.mtl" id="lamp-2" position="-9.993 2.854 -2.602" scale="0.05 0.05 0.05" material=""></a-obj-model>
+         <a-entity light="intensity:0.3;color:#EEE;type:ambient" position="-8.638 5.247 9.293" id="lamp-1-light"></a-entity>
+         <a-entity light="intensity:0.3;type:ambient;color:#EEE" position="-8.638 5.247 -1.346" id="lamp-2-light"></a-entity>
+         <script>
+            var ch1 = document.querySelector('#lamp-1');
+            var ch2 = document.querySelector('#lamp-1');
+
+            ch1.addEventListener('click', function () {
+                lamp1.setAttribute('intensity' , 0.3);
+            });
+            ch2.addEventListener('click', function () {
+                lamp1.setAttribute('intensity' , 0);
+            });
+        </script>
          <!--Entertainment Center-->
          <a-obj-model src="assets/meubleHiFiBas.obj" mtl="assets/meubleHiFiBas.mtl" id="entertainment-center" position="7.655 3.288 3.858" scale="0.1 0.1 0.1" rotation="0 90 0" material=""></a-obj-model>
 
@@ -287,6 +303,8 @@
         <a-obj-model material="" scale="0.05 0.05 0.05" rotation="0 90 0" position="-22.451 0 1.547" src="assets/kitchenTools.obj" mtl="assets/kitchenTools.mtl"></a-obj-model>
         <a-obj-model material="" scale="0.06 0.06 0.06" rotation="0 90 0" position="-16.711 -0.421 -14.009" src="assets/microwave.obj" mtl="assets/microwave.mtl"></a-obj-model>
         <a-obj-model material="" scale="0.04 0.036 0.04" rotation="0 90 0" position="-25.101 0 -0.58" src="assets/kitchenSink.obj" mtl="assets/kitchenSink.mtl"></a-obj-model>
+
+        <!--Bedroom-->
 
     </a-scene>
 </body>
