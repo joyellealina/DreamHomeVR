@@ -6,7 +6,8 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
 ## Team
 - Joyelle Woodson:
   * Living Room design
-  * Bedroom design modeling
+  * Bedroom design and modeling
+  * Unique Models: Roof, Bar Stools
 - Derek Fritz: 
   * Initial house design and structure
   * Kitchen design and modeling
