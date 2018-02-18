@@ -4,7 +4,9 @@ Video for Project 1 will go here.
 ## Link to Project
 https://joyellealina.github.io/DreamHomeVR/Project1/index.html
 ## Team
-- Joyelle Woodson: (duties and responsibilities go here)
+- Joyelle Woodson:
+  * Living Room design
+  * Bedroom design modeling
 - Derek Fritz: 
   * Initial house design and structure
   * Kitchen design and modeling
