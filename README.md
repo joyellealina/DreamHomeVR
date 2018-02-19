@@ -17,7 +17,11 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
   * Stair movement functionality (camera control buttons)
   
 ## Findings and Observations
-Describe the application and highlight findings here. Include screenshots.
+![Bedroom](../master/Project1/screenshots/bedroom.png)
+![Bar/Game Room](../master/Project1/screenshots/game-bar-room.png)
+![Kitchen](../master/Project1/screenshots/kitchen.png)
+![Living Room](../master/Project1/screenshots/living-room.png)
+![Stairs](../master/Project1/screenshots/stair-functionality.png)
 ## Resources
 [Code](https://github.com/joyellealina/DreamHomeVR/blob/master/Project1/index.html)
 
