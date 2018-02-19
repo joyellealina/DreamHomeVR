@@ -12,7 +12,7 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
   * Initial house design and structure
   * Kitchen design and modeling
   * Unique Models : TV, Fireplace, Bar, Pool Table
-  * Model Interactions: TV Operation, Stair Buttons, Pool Balls
+  * Model Interactions: TV Operation, Stair Buttons, Pool Balls, Drumset Sound
   * Stair movement functionality (camera control buttons)
   
 ## Findings and Observations
