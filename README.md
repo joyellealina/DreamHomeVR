@@ -1,4 +1,5 @@
 # DreamHomeVR
+Project 1 focuses on creating a human scale scene experienced from the 'inside out'.
 ## Video
 Video for Project 1 will go here.
 ## Link to Project
@@ -21,6 +22,8 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
 ![Bar/Game Room](../master/Project1/screenshots/game-bar-room.png)
 ![Kitchen](../master/Project1/screenshots/kitchen.png)
 ![Living Room](../master/Project1/screenshots/living-room.png)
+### Stair Functionality
+As we have not quite gone over physics within VR environments, there was a problem in navigating to the second floor of the house. As a quick solution, we created a model that the user can interact with to change the positioning of the camera. This created a "teleport" effect in where the user is lifted to the second floor of the house.
 ![Stairs](../master/Project1/screenshots/stair-functionality.png)
 ## Resources
 [Code](https://github.com/joyellealina/DreamHomeVR/blob/master/Project1/index.html)
