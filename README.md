@@ -7,7 +7,7 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
 - Joyelle Woodson:
   * Living Room design
   * Bedroom design and modeling
-  * Unique Models: Roof, Bar Stools
+  * Unique Models: Roof, House Exterior
   * Model Interactions: Cat sound
 - Derek Fritz: 
   * Initial house design and structure
