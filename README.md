@@ -18,9 +18,13 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
   * Stair movement functionality (camera control buttons)
   
 ## Layout/Observations
+### Bedroom
 ![Bedroom](../master/Project1/screenshots/bedroom.png)
+### Bar/Game Room
 ![Bar/Game Room](../master/Project1/screenshots/game-bar-room.png)
+### Kitchen
 ![Kitchen](../master/Project1/screenshots/kitchen.png)
+### Living Room
 ![Living Room](../master/Project1/screenshots/living-room.png)
 ### Stair Functionality
 As we have not quite gone over physics within VR environments, there was a problem in navigating to the second floor of the house. As a quick solution, we created a model that the user can interact with to change the positioning of the camera. This created a "teleport" effect in where the user is lifted to the second floor of the house.
