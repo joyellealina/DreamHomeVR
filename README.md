@@ -17,7 +17,7 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
   * Model Interactions: TV Operation, Stair Buttons, Pool Balls, Drumset Sound
   * Stair movement functionality (camera control buttons)
   
-## Findings and Observations
+## Layout/Observations
 ![Bedroom](../master/Project1/screenshots/bedroom.png)
 ![Bar/Game Room](../master/Project1/screenshots/game-bar-room.png)
 ![Kitchen](../master/Project1/screenshots/kitchen.png)
