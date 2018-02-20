@@ -10,13 +10,14 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
   * Bedroom design and modeling
   * Unique Models: Roof, House Exterior
   * Model Interactions: Cat sound
+  * Report Screenshots and Descriptions
 - Derek Fritz: 
   * Initial house design and structure
   * Kitchen design and modeling
   * Unique Models : TV, Fireplace, Bar, Pool Table
   * Model Interactions: TV Operation, Stair Buttons, Pool Balls, Drumset Sound
   * Stair movement functionality (camera control buttons)
-  
+  * Report Video Tour
 ## Layout/Observations
 ### Bedroom
 ![Bedroom](../master/Project1/screenshots/bedroom.png)
