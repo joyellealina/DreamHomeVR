@@ -4,6 +4,9 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script>
+        lightOff = false;
+    </script>
 </head>
 <body>
     <a-scene>
@@ -41,7 +44,23 @@
                 cam.setAttribute('position' , {x: 11.557, y: 2.7, z: -5.536});
                 cam.setAttribute('rotation' , {x: 0, y: 0, z: 0});
             });
-        </script>
+            </script>
+            <script type="text/javascript">
+                function switchLight()
+                {
+                    var light = document.querySelector("#insideLight");
+                    if(!lightOff)
+                    {
+                        light.setAttribute('light', 'color', '#1c0f62');
+                        lightOff = true;
+                    }
+                    else
+                    {
+                        light.setAttribute('light', 'color', '#BBB');
+                        lightOff = false;
+                    }
+                }
+            </script>
 
         <!-- Staircase -->
         <a-entity id="staircase" position="0 0 -7.383"><a-box position="12.051 0.703 4.555" src="assets/hardwood.jpg" geometry="depth:1.23;height:1.2;width:5.85"></a-box>
@@ -131,7 +150,12 @@
 
         <!--Environment-->
         <a-entity environment="ground: flat"></a-entity>
-        <a-light id="house-lighting" intensity="0.70" type="ambient"></a-light>
+        <a-entity id="insideLight" light="color:#BBB;type:ambient" position="0 7.486 2.815"></a-entity>
+
+        <!--Switch-->
+        <a-entity id="dimmer" onclick="switchLight()" position="-25 4 -19" rotation="0 90 0" class="intersectable">
+            <a-box position="-33.681 0.01 21.343" width="0.5" height="0.75" depth="0.1" color="white" rotation="0 90 0"></a-box>
+        </a-entity>
 
         <!-- Carpet -->
         <a-box src="assets/carpet.jpg" id="carpet" position="-3.551 0.083 2.145" geometry="depth:20;height:0.14;width:15"></a-box>
