@@ -1,5 +1,5 @@
 # DreamHomeVR
-Project 1 focuses on creating a human scale scene experienced from the 'inside out'.
+Project 1 focuses on creating a human scale scene experienced from the 'inside out'. This project was completed for the purposes of the CS 4331-002 VR course at Texas Tech University.
 ## Video
 [Short Video Tour](https://youtu.be/7YZG90xpnTk)
 ## Link to Project
@@ -20,7 +20,7 @@ https://joyellealina.github.io/DreamHomeVR/Project1/index.html
   * Report Video Tour
 ## Layout/Observations
 
-In total, there are approximately 40 models used in this project. We created the TV, Fireplace, Bar, Pool Table, Light Switch, and all of the House Exterior..
+In total, there are approximately 40 models used in this project. We created the TV, Fireplace, Bar, Pool Table, Light Switch, and all of the House Exterior.
 
 ### Bedroom
 ![Bedroom](../master/Project1/screenshots/bedroom.png)
@@ -42,6 +42,6 @@ As we have not quite gone over physics within VR environments, there was a probl
 [Assets](https://github.com/joyellealina/DreamHomeVR/tree/master/Project1/assets)
 
 Many of our models that we imported can be found here:
-[SweetHome3d](http://www.sweethome3d.com/freeModels.jsp)
-[TurboSquid](https://www.turbosquid.com/)
+- [SweetHome3d](http://www.sweethome3d.com/freeModels.jsp)
+- [TurboSquid](https://www.turbosquid.com/)
 
