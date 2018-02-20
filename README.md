@@ -1,7 +1,7 @@
 # DreamHomeVR
 Project 1 focuses on creating a human scale scene experienced from the 'inside out'.
 ## Video
-Video for Project 1 will go here.
+[Short Video Tour](https://youtu.be/7YZG90xpnTk)
 ## Link to Project
 https://joyellealina.github.io/DreamHomeVR/Project1/index.html
 ## Team
